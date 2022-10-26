@@ -32,6 +32,8 @@
             this.panelStatus = new System.Windows.Forms.Panel();
             this.labelPage = new System.Windows.Forms.Label();
             this.panelActions = new System.Windows.Forms.Panel();
+            this.iconButton5 = new FontAwesome.Sharp.IconButton();
+            this.iconButton4 = new FontAwesome.Sharp.IconButton();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
@@ -59,12 +61,13 @@
             this.labelPage.Name = "labelPage";
             this.labelPage.Size = new System.Drawing.Size(1182, 60);
             this.labelPage.TabIndex = 0;
-            this.labelPage.Text = "Home";
             this.labelPage.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panelActions
             // 
             this.panelActions.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (92)))), ((int) (((byte) (102)))), ((int) (((byte) (244)))));
+            this.panelActions.Controls.Add(this.iconButton5);
+            this.panelActions.Controls.Add(this.iconButton4);
             this.panelActions.Controls.Add(this.iconButton3);
             this.panelActions.Controls.Add(this.iconButton2);
             this.panelActions.Controls.Add(this.iconButton1);
@@ -74,6 +77,44 @@
             this.panelActions.Name = "panelActions";
             this.panelActions.Size = new System.Drawing.Size(300, 693);
             this.panelActions.TabIndex = 1;
+            // 
+            // iconButton5
+            // 
+            this.iconButton5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton5.FlatAppearance.BorderSize = 0;
+            this.iconButton5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton5.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.iconButton5.IconChar = FontAwesome.Sharp.IconChar.Book;
+            this.iconButton5.IconColor = System.Drawing.Color.White;
+            this.iconButton5.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton5.IconSize = 30;
+            this.iconButton5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton5.Location = new System.Drawing.Point(0, 160);
+            this.iconButton5.Name = "iconButton5";
+            this.iconButton5.Size = new System.Drawing.Size(300, 40);
+            this.iconButton5.TabIndex = 4;
+            this.iconButton5.Text = "Read order";
+            this.iconButton5.UseVisualStyleBackColor = true;
+            this.iconButton5.Click += new System.EventHandler(this.iconButton5_Click);
+            // 
+            // iconButton4
+            // 
+            this.iconButton4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton4.FlatAppearance.BorderSize = 0;
+            this.iconButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton4.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.iconButton4.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton4.IconColor = System.Drawing.Color.White;
+            this.iconButton4.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton4.IconSize = 30;
+            this.iconButton4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton4.Location = new System.Drawing.Point(0, 120);
+            this.iconButton4.Name = "iconButton4";
+            this.iconButton4.Size = new System.Drawing.Size(300, 40);
+            this.iconButton4.TabIndex = 3;
+            this.iconButton4.Text = "Add order";
+            this.iconButton4.UseVisualStyleBackColor = true;
+            this.iconButton4.Click += new System.EventHandler(this.iconButton4_Click);
             // 
             // iconButton3
             // 
@@ -145,18 +186,23 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1182, 753);
             this.Controls.Add(this.panelPage);
             this.Controls.Add(this.panelActions);
             this.Controls.Add(this.panelStatus);
+            this.Location = new System.Drawing.Point(15, 15);
             this.MinimumSize = new System.Drawing.Size(1200, 800);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panelStatus.ResumeLayout(false);
             this.panelActions.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private FontAwesome.Sharp.IconButton iconButton5;
+
+        private FontAwesome.Sharp.IconButton iconButton4;
 
         private System.Windows.Forms.Label labelPage;
 
