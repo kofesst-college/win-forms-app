@@ -4,10 +4,11 @@ namespace WinFormsApp1.Models
 {
     public class Order
     {
+        public int Id { get; set; }
         public DateTime Timestamp { get; set; }
         public User Customer { get; set; }
         public double TotalPrice { get; set; }
-        
+
         public override string ToString()
         {
             return $"Timestamp: {Timestamp}\n" +

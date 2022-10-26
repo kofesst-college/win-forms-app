@@ -39,7 +39,8 @@ namespace WinFormsApp1.Pages
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnAddXml = new System.Windows.Forms.Button();
+            this.btnAddDb = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.tbMiddleName = new System.Windows.Forms.TextBox();
@@ -160,7 +161,8 @@ namespace WinFormsApp1.Pages
             // groupBox1
             // 
             this.tableLayoutPanel1.SetColumnSpan(this.groupBox1, 2);
-            this.groupBox1.Controls.Add(this.btnAdd);
+            this.groupBox1.Controls.Add(this.btnAddXml);
+            this.groupBox1.Controls.Add(this.btnAddDb);
             this.groupBox1.Controls.Add(this.tableLayoutPanel2);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
@@ -172,16 +174,27 @@ namespace WinFormsApp1.Pages
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Customer Information";
             // 
-            // btnAdd
+            // btnAddXml
             // 
-            this.btnAdd.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.btnAdd.Location = new System.Drawing.Point(3, 534);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(856, 53);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add new order";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            this.btnAddXml.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAddXml.Location = new System.Drawing.Point(3, 481);
+            this.btnAddXml.Name = "btnAddXml";
+            this.btnAddXml.Size = new System.Drawing.Size(856, 53);
+            this.btnAddXml.TabIndex = 5;
+            this.btnAddXml.Text = "Add order to XML";
+            this.btnAddXml.UseVisualStyleBackColor = true;
+            this.btnAddXml.Click += new System.EventHandler(this.btnAddXml_Click);
+            // 
+            // btnAddDb
+            // 
+            this.btnAddDb.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnAddDb.Location = new System.Drawing.Point(3, 534);
+            this.btnAddDb.Name = "btnAddDb";
+            this.btnAddDb.Size = new System.Drawing.Size(856, 53);
+            this.btnAddDb.TabIndex = 4;
+            this.btnAddDb.Text = "Add order to MySQL";
+            this.btnAddDb.UseVisualStyleBackColor = true;
+            this.btnAddDb.Click += new System.EventHandler(this.btnAddDb_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -367,7 +380,7 @@ namespace WinFormsApp1.Pages
             this.label6.TabIndex = 2;
             this.label6.Text = "Series";
             // 
-            // AddUserPage
+            // AddOrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -396,7 +409,9 @@ namespace WinFormsApp1.Pages
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Button btnAddXml;
+
+        private System.Windows.Forms.Button btnAddDb;
 
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.NumericUpDown npNumber;
