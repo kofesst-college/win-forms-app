@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using WinFormsApp1.Database;
 using WinFormsApp1.Models;
 using WinFormsApp1.Navigation;
 using WinFormsApp1.Services;
@@ -14,17 +15,40 @@ namespace WinFormsApp1.Pages
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAddDb_Click(object sender, EventArgs e)
         {
-            AddNewOrder();
+            AddOrderToDb();
         }
 
-        private void AddNewOrder()
+        private void btnAddXml_Click(object sender, EventArgs e)
         {
+            AddOrderToXml();
+        }
+
+        private void AddOrderToDb()
+        {
+            var order = CreateOrder();
+            var usersDao = new UsersDao();
+            OperationResultHandler.HandleResult(
+                usersDao.Insert(order.Customer),
+                showSuccessMessageBox:false,
+                onSuccess: userId =>
+                {
+                    var ordersDao = new OrdersDao();
+                    order.Customer.Id = userId;
+                    OperationResultHandler.HandleResult(
+                        ordersDao.Insert(order)
+                    );
+                }
+            );
+        }
+
+        private void AddOrderToXml()
+        {
+            var order = CreateOrder();
             var filePath = SelectFilePath();
             if (filePath == null) return;
 
-            var order = CreateOrder();
             var saveResult = XmlService.SaveObject(filePath, order);
             OperationResultHandler.HandleResult(saveResult);
         }
