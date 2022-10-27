@@ -9,7 +9,9 @@ namespace WinFormsApp1
         public Form1() : base(
             new DatesPage(), 
             new SquareEquationPage(),
-            new AboutPage()
+            new AboutPage(),
+            new AddOrderPage(),
+            new ReadOrderPage()
         )
         {
             InitializeComponent();
@@ -38,6 +40,16 @@ namespace WinFormsApp1
         private void iconButton3_Click(object sender, EventArgs e)
         {
             Navigate(Routes.About);
+        }
+
+        private void iconButton4_Click(object sender, EventArgs e)
+        {
+            Navigate(Routes.AddOrder);
+        }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+            Navigate(Routes.ReadOrder);
         }
     }
 }
