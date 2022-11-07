@@ -11,7 +11,8 @@ namespace MultiSoftApp
             new SquareEquationPage(),
             new AboutPage(),
             new AddOrderPage(),
-            new ReadOrderPage()
+            new ReadOrderPage(),
+            new HexPage()
         )
         {
             InitializeComponent();
@@ -50,6 +51,11 @@ namespace MultiSoftApp
         private void iconButton5_Click(object sender, EventArgs e)
         {
             Navigate(Routes.ReadOrder);
+        }
+
+        private void iconButton6_Click(object sender, EventArgs e)
+        {
+            Navigate(Routes.Hex);
         }
     }
 }

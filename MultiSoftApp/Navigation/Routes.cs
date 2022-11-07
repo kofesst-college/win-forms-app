@@ -7,5 +7,6 @@
         public static string About => "about";
         public static string AddOrder => "orders/add";
         public static string ReadOrder => "orders/get";
+        public static string Hex => "hex";
     }
 }

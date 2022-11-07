@@ -38,6 +38,7 @@
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.panelPage = new System.Windows.Forms.Panel();
+            this.iconButton6 = new FontAwesome.Sharp.IconButton();
             this.panelStatus.SuspendLayout();
             this.panelActions.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +67,7 @@
             // panelActions
             // 
             this.panelActions.BackColor = System.Drawing.Color.FromArgb(((int) (((byte) (92)))), ((int) (((byte) (102)))), ((int) (((byte) (244)))));
+            this.panelActions.Controls.Add(this.iconButton6);
             this.panelActions.Controls.Add(this.iconButton5);
             this.panelActions.Controls.Add(this.iconButton4);
             this.panelActions.Controls.Add(this.iconButton3);
@@ -182,6 +184,25 @@
             this.panelPage.Size = new System.Drawing.Size(882, 693);
             this.panelPage.TabIndex = 2;
             // 
+            // iconButton6
+            // 
+            this.iconButton6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.iconButton6.FlatAppearance.BorderSize = 0;
+            this.iconButton6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton6.Font = new System.Drawing.Font("Verdana", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.iconButton6.IconChar = FontAwesome.Sharp.IconChar.Info;
+            this.iconButton6.IconColor = System.Drawing.Color.White;
+            this.iconButton6.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconButton6.IconSize = 30;
+            this.iconButton6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.iconButton6.Location = new System.Drawing.Point(0, 200);
+            this.iconButton6.Name = "iconButton6";
+            this.iconButton6.Size = new System.Drawing.Size(300, 40);
+            this.iconButton6.TabIndex = 5;
+            this.iconButton6.Text = "Hex info";
+            this.iconButton6.UseVisualStyleBackColor = true;
+            this.iconButton6.Click += new System.EventHandler(this.iconButton6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -199,6 +220,8 @@
             this.panelActions.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private FontAwesome.Sharp.IconButton iconButton6;
 
         private FontAwesome.Sharp.IconButton iconButton5;
 
