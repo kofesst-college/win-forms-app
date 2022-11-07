@@ -68,6 +68,12 @@
     <Compile Include="Controls\HexTextBox.Designer.cs">
       <DependentUpon>HexTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controls\PriceTextBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\PriceTextBox.Designer.cs">
+      <DependentUpon>PriceTextBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="Pages\HexPage.cs">
       <SubType>UserControl</SubType>
     </Compile>

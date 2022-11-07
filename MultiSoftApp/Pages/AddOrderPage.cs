@@ -58,7 +58,7 @@ namespace MultiSoftApp.Pages
             return new Order(
                 -1,
                 dpTimestamp.Value,
-                decimal.ToDouble(npTotalPrice.Value),
+                tbTotalPrice.Value,
                 new User (
                     -1,
                     tbFirstName.Text,

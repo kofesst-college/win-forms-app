@@ -35,7 +35,6 @@ namespace MultiSoftApp.Pages
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.npTotalPrice = new System.Windows.Forms.NumericUpDown();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -57,9 +56,9 @@ namespace MultiSoftApp.Pages
             this.panel4 = new System.Windows.Forms.Panel();
             this.npSeries = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
+            this.tbTotalPrice = new MultiSoftApp.Controls.PriceTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize) (this.npTotalPrice)).BeginInit();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -112,7 +111,7 @@ namespace MultiSoftApp.Pages
             // panel2
             // 
             this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.npTotalPrice);
+            this.panel2.Controls.Add(this.tbTotalPrice);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(444, 3);
@@ -120,21 +119,6 @@ namespace MultiSoftApp.Pages
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
             this.panel2.Size = new System.Drawing.Size(435, 77);
             this.panel2.TabIndex = 8;
-            // 
-            // npTotalPrice
-            // 
-            this.npTotalPrice.DecimalPlaces = 2;
-            this.npTotalPrice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.npTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.npTotalPrice.Increment = new decimal(new int[] {5, 0, 0, 65536});
-            this.npTotalPrice.Location = new System.Drawing.Point(10, 37);
-            this.npTotalPrice.Maximum = new decimal(new int[] {100000000, 0, 0, 0});
-            this.npTotalPrice.Minimum = new decimal(new int[] {1, 0, 0, 0});
-            this.npTotalPrice.Name = "npTotalPrice";
-            this.npTotalPrice.Size = new System.Drawing.Size(415, 30);
-            this.npTotalPrice.TabIndex = 3;
-            this.npTotalPrice.ThousandsSeparator = true;
-            this.npTotalPrice.Value = new decimal(new int[] {1, 0, 0, 0});
             // 
             // label1
             // 
@@ -380,6 +364,16 @@ namespace MultiSoftApp.Pages
             this.label6.TabIndex = 2;
             this.label6.Text = "Series";
             // 
+            // tbTotalPrice
+            // 
+            this.tbTotalPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.tbTotalPrice.Location = new System.Drawing.Point(10, 37);
+            this.tbTotalPrice.Name = "tbTotalPrice";
+            this.tbTotalPrice.Size = new System.Drawing.Size(415, 30);
+            this.tbTotalPrice.TabIndex = 3;
+            this.tbTotalPrice.Value = 0D;
+            // 
             // AddOrderPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -392,7 +386,7 @@ namespace MultiSoftApp.Pages
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize) (this.npTotalPrice)).EndInit();
+            this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -408,6 +402,8 @@ namespace MultiSoftApp.Pages
             ((System.ComponentModel.ISupportInitialize) (this.npSeries)).EndInit();
             this.ResumeLayout(false);
         }
+
+        private MultiSoftApp.Controls.PriceTextBox tbTotalPrice;
 
         private System.Windows.Forms.Button btnAddXml;
 
@@ -441,7 +437,6 @@ namespace MultiSoftApp.Pages
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.NumericUpDown npTotalPrice;
 
         private System.Windows.Forms.Panel panel1;
 
