@@ -22,6 +22,7 @@ namespace MultiSoftApp.Pages
             lblReversed.Text = hexStr;
             var asciiCodes = GetAsciiSymbolCodes(hexStr);
             lblAscii.Text = string.Join(" ", asciiCodes);
+            lblDecimal.Text = tbHex.DecValue.ToString();
         }
 
         private static string[] GetAsciiSymbolCodes(string str)

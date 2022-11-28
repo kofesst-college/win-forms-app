@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Globalization;
-using TextBox = System.Windows.Forms.TextBox;
+using System.Windows.Forms;
 
 namespace MultiSoftApp.Controls
 {
@@ -9,9 +9,12 @@ namespace MultiSoftApp.Controls
     public partial class HexTextBox : TextBox
     {
         private const int Minimum = 0x00;
-        private const int Maximum = 0xFF;
+        public int Maximum { get; set; } = 0xFF;
+
+        private bool IsFullForm => Text.StartsWith("0x");
 
         public int Value { get; private set; }
+        public int DecValue => Convert.ToInt32(Value.ToString("X2"), 16);
         
         public HexTextBox()
         {
@@ -22,12 +25,11 @@ namespace MultiSoftApp.Controls
 
         private void OnLeave(object sender, EventArgs e)
         {
-            Text = Value.ToString("X2");
+            Text = FormatValue();
         }
 
         private void OnTextChanged(object sender, EventArgs e)
         {
-            Text = Text.ToUpper();
             SelectionStart = Text.Length;
             SelectionLength = 0;
 
@@ -37,28 +39,39 @@ namespace MultiSoftApp.Controls
                 return;
             }
 
-            if (Text.Length > 2)
+            if (Text.Equals("0x", StringComparison.InvariantCultureIgnoreCase))
             {
-                Text = Value.ToString("X2");
+                Value = 0;
                 return;
             }
 
             if (!IsValidInput(Text, out var hex))
             {
-                Text = "";
+                Text = Text.Remove(Text.Length - 1);
                 return;
             }
 
             Value = hex;
         }
 
-        private static bool IsValidInput(string text, out int value)
+        private bool IsValidInput(string text, out int value)
         {
+            text = text.Replace("0x", "");
             var parseResult = int.TryParse(text, NumberStyles.HexNumber,
-                CultureInfo.InvariantCulture, out value);
+                CultureInfo.InvariantCulture.NumberFormat, out value);
             return value >= Minimum &&
                    value <= Maximum &&
                    parseResult;
+        }
+
+        private string FormatValue()
+        {
+            if (IsFullForm)
+            {
+                return $"0x{Value:X2}";
+            }
+
+            return Value.ToString("X2");
         }
     }
 }

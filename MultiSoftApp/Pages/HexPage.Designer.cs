@@ -42,10 +42,14 @@ namespace MultiSoftApp.Pages
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblReversed = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.lblDecimal = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -66,6 +70,7 @@ namespace MultiSoftApp.Pages
             this.tbHex.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tbHex.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.tbHex.Location = new System.Drawing.Point(315, 13);
+            this.tbHex.Maximum = 255;
             this.tbHex.Name = "tbHex";
             this.tbHex.Size = new System.Drawing.Size(238, 34);
             this.tbHex.TabIndex = 1;
@@ -97,15 +102,17 @@ namespace MultiSoftApp.Pages
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.11338F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.88662F));
+            this.tableLayoutPanel1.Controls.Add(this.panel4, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 173);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 1;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.RowCount = 2;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(882, 520);
             this.tableLayoutPanel1.TabIndex = 4;
             // 
@@ -113,10 +120,10 @@ namespace MultiSoftApp.Pages
             // 
             this.panel3.Controls.Add(this.lblAscii);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(444, 3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(445, 3);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(435, 514);
+            this.panel3.Size = new System.Drawing.Size(434, 88);
             this.panel3.TabIndex = 1;
             // 
             // lblAscii
@@ -126,7 +133,7 @@ namespace MultiSoftApp.Pages
             this.lblAscii.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.lblAscii.Location = new System.Drawing.Point(0, 54);
             this.lblAscii.Name = "lblAscii";
-            this.lblAscii.Size = new System.Drawing.Size(435, 34);
+            this.lblAscii.Size = new System.Drawing.Size(434, 34);
             this.lblAscii.TabIndex = 5;
             this.lblAscii.Text = "00 00";
             this.lblAscii.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -139,7 +146,7 @@ namespace MultiSoftApp.Pages
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label6.Location = new System.Drawing.Point(0, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(435, 54);
+            this.label6.Size = new System.Drawing.Size(434, 54);
             this.label6.TabIndex = 4;
             this.label6.Text = "ASCII codes";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -148,10 +155,10 @@ namespace MultiSoftApp.Pages
             // 
             this.panel2.Controls.Add(this.lblReversed);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(435, 514);
+            this.panel2.Size = new System.Drawing.Size(436, 88);
             this.panel2.TabIndex = 0;
             // 
             // lblReversed
@@ -161,7 +168,7 @@ namespace MultiSoftApp.Pages
             this.lblReversed.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
             this.lblReversed.Location = new System.Drawing.Point(0, 54);
             this.lblReversed.Name = "lblReversed";
-            this.lblReversed.Size = new System.Drawing.Size(435, 34);
+            this.lblReversed.Size = new System.Drawing.Size(436, 34);
             this.lblReversed.TabIndex = 5;
             this.lblReversed.Text = "00 00";
             this.lblReversed.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -174,10 +181,46 @@ namespace MultiSoftApp.Pages
             this.label3.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label3.Location = new System.Drawing.Point(0, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(435, 54);
+            this.label3.Size = new System.Drawing.Size(436, 54);
             this.label3.TabIndex = 4;
             this.label3.Text = "Reversed";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel4
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.panel4, 2);
+            this.panel4.Controls.Add(this.lblDecimal);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(3, 97);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(876, 89);
+            this.panel4.TabIndex = 2;
+            // 
+            // lblDecimal
+            // 
+            this.lblDecimal.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.lblDecimal.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDecimal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.lblDecimal.Location = new System.Drawing.Point(0, 54);
+            this.lblDecimal.Name = "lblDecimal";
+            this.lblDecimal.Size = new System.Drawing.Size(876, 34);
+            this.lblDecimal.TabIndex = 5;
+            this.lblDecimal.Text = "0";
+            this.lblDecimal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(876, 54);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "As decimal";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // HexPage
             // 
@@ -195,8 +238,13 @@ namespace MultiSoftApp.Pages
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label lblDecimal;
+        private System.Windows.Forms.Label label5;
 
         private System.Windows.Forms.Label label6;
 
