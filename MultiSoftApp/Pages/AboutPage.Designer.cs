@@ -32,6 +32,7 @@ namespace MultiSoftApp.Pages
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.priceTextBox21 = new MultiSoftApp.Controls.PriceTextBox2();
             this.SuspendLayout();
             // 
             // label1
@@ -47,16 +48,30 @@ namespace MultiSoftApp.Pages
             this.label1.TabIndex = 0;
             this.label1.Text = "About program\r\n\r\nThis program contains navigation controller and three simple pag" + "es: Home, Calculator and About.";
             // 
+            // priceTextBox21
+            // 
+            this.priceTextBox21.Location = new System.Drawing.Point(3, 187);
+            this.priceTextBox21.Name = "priceTextBox21";
+            this.priceTextBox21.Size = new System.Drawing.Size(200, 50);
+            this.priceTextBox21.TabIndex = 1;
+            this.priceTextBox21.Text = "00";
+            this.priceTextBox21.Value = 0D;
+            this.priceTextBox21.Visible = true;
+            // 
             // AboutPage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Transparent;
+            this.Controls.Add(this.priceTextBox21);
             this.Controls.Add(this.label1);
             this.Name = "AboutPage";
             this.Size = new System.Drawing.Size(540, 393);
             this.ResumeLayout(false);
+            this.PerformLayout();
         }
+
+        private MultiSoftApp.Controls.PriceTextBox2 priceTextBox21;
 
         private System.Windows.Forms.Label label1;
 
