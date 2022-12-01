@@ -1,65 +1,62 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Windows.Documents;
 using System.Windows.Forms;
 
 namespace MultiSoftApp.Controls
 {
     public partial class PriceCalculator : Form
     {
-        private double _value;
         public double Value
         {
-            get => _value;
-            set
-            {
-                _value = value;
-                Text = value.ToString();
-            }
+            get => priceTextBox21.Value;
+            set => priceTextBox21.Value = value;
         }
 
         public PriceCalculator(double value)
         {
             InitializeComponent();
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MinimizeBox = false;
+            MaximizeBox = false;
+
             priceTextBox21.Value = value;
-            this.Value = value;
-            this.priceTextBox21.TextChanged += OnTextChanged;
-        }
-        private void OnTextChanged(object sender, EventArgs e)
-        {
-            if (double.TryParse(Text.Replace(".", ","), out var value))
-            {
-                Value = value;
-            }
-        }
-        
-        private void AddValue(int inputValue)
-        {
-            priceTextBox21.Value = (Value * 10) + inputValue;
-            Value = (Value * 10) + inputValue;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void AddValue(string inputValue)
         {
-            AddValue(1);
+            priceTextBox21.Text = $@"{priceTextBox21.Text}{inputValue}";
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void numberButton_Click(object sender, EventArgs e)
         {
-            AddValue(2);
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            AddValue(3);
+            if (sender is Button senderButton)
+                AddValue(senderButton.Text);
         }
 
         private void buttonOK_Click(object sender, EventArgs e)
         {
-            Console.Write(Value);
             DialogResult = DialogResult.OK;
             Close();
-            
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            if (priceTextBox21.Text.Length != 0)
+                priceTextBox21.Text = priceTextBox21.Text.Remove(priceTextBox21.Text.Length - 1);
+        }
+
+        private void buttonFraction_Click(object sender, EventArgs e)
+        {
+            if (priceTextBox21.Value != 0.0) priceTextBox21.Value = 1.0 / priceTextBox21.Value;
+        }
+
+        private void buttonNegative_Click(object sender, EventArgs e)
+        {
+            Value = -Value;
+        }
+
+        private void buttonC_Click(object sender, EventArgs e)
+        {
+            Value = 0;
         }
     }
 }

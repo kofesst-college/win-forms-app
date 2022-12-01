@@ -128,7 +128,6 @@ namespace MultiSoftApp.Pages
             this.tbTotalPrice.Name = "tbTotalPrice";
             this.tbTotalPrice.Size = new System.Drawing.Size(415, 30);
             this.tbTotalPrice.TabIndex = 3;
-            this.tbTotalPrice.Text = "0 руб. 0. коп.";
             this.tbTotalPrice.Value = 0D;
             // 
             // label1
