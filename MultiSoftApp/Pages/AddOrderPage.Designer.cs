@@ -35,6 +35,7 @@ namespace MultiSoftApp.Pages
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tbTotalPrice = new MultiSoftApp.Controls.PriceTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,7 +57,6 @@ namespace MultiSoftApp.Pages
             this.panel4 = new System.Windows.Forms.Panel();
             this.npSeries = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
-            this.tbTotalPrice = new MultiSoftApp.Controls.PriceTextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -119,6 +119,17 @@ namespace MultiSoftApp.Pages
             this.panel2.Padding = new System.Windows.Forms.Padding(10);
             this.panel2.Size = new System.Drawing.Size(435, 77);
             this.panel2.TabIndex = 8;
+            // 
+            // tbTotalPrice
+            // 
+            this.tbTotalPrice.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
+            this.tbTotalPrice.Location = new System.Drawing.Point(10, 37);
+            this.tbTotalPrice.Name = "tbTotalPrice";
+            this.tbTotalPrice.Size = new System.Drawing.Size(415, 30);
+            this.tbTotalPrice.TabIndex = 3;
+            this.tbTotalPrice.Text = "0 руб. 0. коп.";
+            this.tbTotalPrice.Value = 0D;
             // 
             // label1
             // 
@@ -363,16 +374,6 @@ namespace MultiSoftApp.Pages
             this.label6.Size = new System.Drawing.Size(379, 27);
             this.label6.TabIndex = 2;
             this.label6.Text = "Series";
-            // 
-            // tbTotalPrice
-            // 
-            this.tbTotalPrice.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte) (204)));
-            this.tbTotalPrice.Location = new System.Drawing.Point(10, 37);
-            this.tbTotalPrice.Name = "tbTotalPrice";
-            this.tbTotalPrice.Size = new System.Drawing.Size(415, 30);
-            this.tbTotalPrice.TabIndex = 3;
-            this.tbTotalPrice.Value = 0D;
             // 
             // AddOrderPage
             // 
