@@ -1,13 +1,14 @@
 ﻿using System;
+using System.Drawing;
 using System.Globalization;
+using System.Windows.Forms;
 using TextBox = System.Windows.Forms.TextBox;
+using Button = System.Windows.Forms.Button;
 
 namespace MultiSoftApp.Controls
 {
     public partial class PriceTextBox : TextBox
     {
-        private const string Format = "{0} руб. {1}. коп.";
-        
         private double _value;
 
         public double Value
@@ -19,55 +20,51 @@ namespace MultiSoftApp.Controls
                 Text = UpdateText();
             }
         }
-        
+
         public PriceTextBox()
         {
             InitializeComponent();
+            var calculatorButton = new Button
+            {
+                Size = new Size(25, ClientSize.Height + 2),
+                Dock = DockStyle.Right
+            };
+            calculatorButton.Click += btnModalCalculator_Click;
+            Controls.Add(calculatorButton);
+
             TextChanged += OnTextChanged;
-            GotFocus += (sender, args) => Text = UpdateText(); 
-            LostFocus += (sender, args) => Text = UpdateText(); 
+            GotFocus += (sender, args) => Text = UpdateText();
+            LostFocus += (sender, args) => Text = UpdateText();
             Leave += (sender, args) => Text = UpdateText();
             Enter += (sender, args) => Text = UpdateText();
         }
 
+        private void btnModalCalculator_Click(object sender, EventArgs e)
+        {
+            var calculatorForm = new PriceCalculator(Value);
+            var result = calculatorForm.ShowDialog(this);
+            if (result != DialogResult.OK) return;
+
+            _value = calculatorForm.Value;
+            Text = UpdateText();
+        }
+
         private void OnTextChanged(object sender, EventArgs e)
         {
-            if (double.TryParse(Text.Replace(".", ","), out var value))
-            {
-                _value = value;
-            }
+            if (Text.EndsWith(".") || Text.EndsWith(",")) return;
+            if (!double.TryParse(Text.Replace(".", ","), out var value)) return;
+            _value = value;
         }
 
         private string UpdateText()
         {
-            if (Focused)
-            {
-                return Value.ToString(CultureInfo.InvariantCulture);
-            }
+            if (Text.Length == 0) return "";
+            if (Focused) return Value.ToString(CultureInfo.CurrentCulture);
 
-            if (Value == 0)
-            {
-                return string.Format(Format, 0, 0);
-            }
-
-            var value = Value.ToString(CultureInfo.InvariantCulture);
-            var decimalPart = Math.Truncate(Value);
-            var dotIndex = value.IndexOf(".", StringComparison.Ordinal);
-            var floatingPart = "0";
-            if (dotIndex > 0)
-            {
-                floatingPart = value.Substring(dotIndex + 1);
-            }
-
-            if (floatingPart.Length > 2)
-            {
-                floatingPart = floatingPart.Substring(0, 2);
-            }
-            return string.Format(
-                Format,
-                decimalPart,
-                floatingPart.PadRight(2, '0')
-            );
+            var s = Value.ToString(CultureInfo.CurrentCulture).Replace(',', '.');
+            var index = s.IndexOf('.');
+            var decimalPlaces = index == -1 ? 0 : s.Length - index - 1;
+            return Value.ToString($"N{decimalPlaces}", NumberFormatInfo.CurrentInfo);
         }
     }
 }

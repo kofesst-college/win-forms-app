@@ -32,7 +32,7 @@ namespace MultiSoftApp.Pages
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.priceTextBox21 = new MultiSoftApp.Controls.PriceTextBox2();
+            this.priceTextBox21 = new MultiSoftApp.Controls.PriceTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -71,7 +71,7 @@ namespace MultiSoftApp.Pages
             this.PerformLayout();
         }
 
-        private MultiSoftApp.Controls.PriceTextBox2 priceTextBox21;
+        private MultiSoftApp.Controls.PriceTextBox priceTextBox21;
 
         private System.Windows.Forms.Label label1;
 

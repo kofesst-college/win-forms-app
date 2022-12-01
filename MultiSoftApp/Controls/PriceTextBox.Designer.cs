@@ -32,6 +32,9 @@ namespace MultiSoftApp.Controls
         private void InitializeComponent()
         {
             this.SuspendLayout();
+            // 
+            // PriceTextBox2
+            // 
             this.ResumeLayout(false);
         }
 
