@@ -191,6 +191,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Doc\readme.adoc" />
+    <Content Include="Doc\hex_text_box.png" />
+    <Content Include="Doc\price_text_box.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
