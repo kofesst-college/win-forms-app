@@ -131,9 +131,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utils\OperationResultHandler.cs" />
-    <EmbeddedResource Include="Controls\PriceCalculator.resx">
-      <DependentUpon>PriceCalculator.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -191,6 +188,9 @@
       <Project>{22addf24-12b9-4021-ba62-dca3df359f52}</Project>
       <Name>MultiSoftApp.Xml</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Doc\readme.adoc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
